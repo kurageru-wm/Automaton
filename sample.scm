@@ -1,6 +1,6 @@
 (use automaton)
 
-(define am (make-automaton 's '(t)))
+(define am (make-dfa 's '(t)))
 (define s1 (make-state 's '((a . q) (b . t))))
 (define s2 (make-state 'q '((a . s) (b . r))))
 (define s3 (make-state 'r '((a . t) (b . q))))

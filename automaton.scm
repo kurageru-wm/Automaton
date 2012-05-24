@@ -1,6 +1,9 @@
 (define-module automaton
-
-  (export-all)
+  (export
+    <DFA> <state>
+    register! accept? step! run!
+    make-dfa make-state
+    clear!)
   )
 (select-module automaton)
 
@@ -59,7 +62,7 @@
 (define-method run! ((am <DFA>) (l <list>))
   (for-each (cut step! am <>) l))
 
-(define (make-automaton init A)
+(define (make-dfa init A)
   (make <DFA> :init init :A A))
 
 
